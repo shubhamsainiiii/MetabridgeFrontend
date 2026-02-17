@@ -1,8 +1,39 @@
+/* eslint-disable no-unused-vars */
+
+
 import React from 'react'
+import { motion } from 'framer-motion'
 import { FaCode, FaMobileAlt, FaCloud, FaShieldAlt } from "react-icons/fa";
-import { fadeUp, staggerContainer } from "../Animations/variants";
 
 const Services = () => {
+
+    const smoothEase = [0.22, 1, 0.36, 1];
+
+    // Smooth Fade Up
+    const fadeUp = {
+        hidden: {
+            opacity: 0,
+            y: 35
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 1.2,
+                ease: smoothEase
+            }
+        }
+    };
+
+    // Stagger effect
+    const staggerContainer = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.18
+            }
+        }
+    };
 
     const services = [
         { icon: <FaCode />, title: "Web Development", desc: "Modern, scalable React & MERN applications." },
@@ -12,37 +43,55 @@ const Services = () => {
     ];
 
     return (
-        <section
+        <motion.section
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
-            className="py-20 bg-gray-50"
+            viewport={{ once: true, amount: 0.4 }}
+            className="py-24 bg-gray-50"
         >
             <div className="max-w-7xl mx-auto px-6 text-center">
 
-                <h2 className="text-3xl md:text-4xl font-bold mb-12">
+                {/* Heading Animation */}
+                <motion.h2
+                    variants={fadeUp}
+                    className="text-3xl md:text-4xl font-bold mb-16"
+                >
                     Our Services
-                </h2>
+                </motion.h2>
 
-                <div className="grid md:grid-cols-4 gap-8">
+                <div className="grid md:grid-cols-4 gap-10">
                     {services.map((item, index) => (
-                        <div key={index} className="bg-white p-8 rounded-xl shadow hover:shadow-xl transition duration-500">
+                        <motion.div
+                            key={index}
+                            variants={fadeUp}
+                            whileHover={{
+                                scale: 1.05,
+                                y: -6
+                            }}
+                            transition={{
+                                duration: 0.4,
+                                ease: smoothEase
+                            }}
+                            className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl"
+                        >
                             <div className="text-4xl text-indigo-600 mb-4 flex justify-center">
                                 {item.icon}
                             </div>
+
                             <h3 className="font-semibold text-xl mb-2">
                                 {item.title}
                             </h3>
+
                             <p className="text-gray-500">
                                 {item.desc}
                             </p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 
             </div>
-        </section>
+        </motion.section>
     )
 }
 

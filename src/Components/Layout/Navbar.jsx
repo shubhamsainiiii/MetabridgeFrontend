@@ -15,7 +15,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="sticky top-0 z-50 bg-linear-to-bl from-[#001F3D] via-[#3e5876] to-[#001F3D]">
+        <nav className="sticky top-0 z-50 bg-gradient-to-bl from-gray-900 via-gray-800 to-gray-900">
             <div className="max-w-300 mx-auto px-5 min-h-17.5 flex items-center justify-between">
                 <Link to="/">
                     <img
@@ -29,7 +29,7 @@ const Navbar = () => {
                         <li key={item.name}>
                             <Link
                                 to={item.path}
-                                className="text-gray-200 text-sm font-medium hover:text-[#ED985F] transition-all duration-500"
+                                className="text-gray-200 text-sm font-medium hover:text-indigo-500 transition-all duration-500"
                             >
                                 {item.name}
                             </Link>

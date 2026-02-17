@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Testimonials = () => {
 
@@ -13,29 +15,70 @@ const Testimonials = () => {
         }
     ];
 
+    const fadeUp = {
+        hidden: {
+            opacity: 0,
+            y: 40
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 1.3,
+                ease: "easeInOut"
+            }
+        }
+    };
+
+    const staggerContainer = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.2
+            }
+        }
+    };
+
     return (
-        <section className="py-20 bg-gray-50">
+        <motion.section
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className="py-24 bg-gray-50"
+        >
             <div className="max-w-5xl mx-auto px-6 text-center">
 
-                <h2 className="text-3xl md:text-4xl font-bold mb-12">
+                {/* Heading Animation */}
+                <motion.h2
+                    variants={fadeUp}
+                    className="text-3xl md:text-4xl font-bold mb-14"
+                >
                     Client Testimonials
-                </h2>
+                </motion.h2>
 
                 <div className="grid md:grid-cols-2 gap-8">
                     {reviews.map((review, index) => (
-                        <div key={index} className="bg-white p-8 rounded-xl shadow">
+                        <motion.div
+                            key={index}
+                            variants={fadeUp}
+                            whileHover={{ scale: 1.03 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                            className="bg-white p-8 rounded-xl shadow-lg"
+                        >
                             <p className="italic text-gray-600">
                                 "{review.text}"
                             </p>
+
                             <h4 className="mt-4 font-semibold text-indigo-600">
                                 {review.name}
                             </h4>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 
             </div>
-        </section>
+        </motion.section>
     )
 }
 
