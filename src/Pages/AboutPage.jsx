@@ -3,6 +3,19 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaLightbulb, FaUsers, FaLayerGroup } from "react-icons/fa";
 import { FaClipboardList, FaPencilRuler, FaCode, FaRocket } from "react-icons/fa";
+import {
+    FaHotel,
+    FaUtensils,
+    FaCar,
+    FaBuilding,
+    FaHospital,
+    FaHeadset,
+    FaUniversity,
+    FaBus,
+    FaBook,
+    FaCogs
+} from "react-icons/fa";
+
 
 const AboutPage = () => {
     const fadeUp = {
@@ -33,7 +46,7 @@ const AboutPage = () => {
     };
 
     return (
-        <div className="text-gray-800 overflow-hidden">
+        <div className="text-gray-800 overflow-hidden bg-indigo-50 ">
 
             {/* 🔥 Enhanced Split Hero Section */}
             <section className="py-8 bg-linear-to-r from-indigo-900 via-indigo-800 to-indigo-900 text-white">
@@ -43,7 +56,7 @@ const AboutPage = () => {
                         variants={fadeLeft}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                     >
 
                         {/* Small Badge */}
@@ -69,11 +82,11 @@ const AboutPage = () => {
 
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                            <button className="bg-white text-indigo-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition">
+                            <button className="bg-white text-indigo-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-500">
                                 Get Started
                             </button>
 
-                            <button className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-indigo-900 transition">
+                            <button className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-indigo-900 transition-all duration-500">
                                 View Our Work
                             </button>
                         </div>
@@ -102,7 +115,7 @@ const AboutPage = () => {
                         variants={fadeRight}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
                         alt="Team"
                         className="rounded-3xl shadow-2xl"
@@ -113,8 +126,8 @@ const AboutPage = () => {
 
 
             {/* 🔥 Who We Are - Expanded Version */}
-            <section className="py-28 bg-white relative">
-                <div className="absolute inset-0 bg-linear-to-b from-white via-indigo-50/40 to-white"></div>
+            <section className="py-28 relative">
+                <div className="absolute inset-0 "></div>
 
                 <div className="relative max-w-7xl mx-auto px-6">
 
@@ -123,7 +136,7 @@ const AboutPage = () => {
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.2, ease: "easeInOut" }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         className="text-center mb-16"
                     >
                         <h2 className="text-4xl font-bold mb-4">Who We Are</h2>
@@ -141,7 +154,7 @@ const AboutPage = () => {
                             initial={{ opacity: 0, x: -40 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1.2, ease: "easeInOut" }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false }}
                         >
                             <h3 className="text-2xl font-bold text-indigo-700 mb-6">
                                 Transforming Ideas into Scalable Digital Products
@@ -190,9 +203,9 @@ const AboutPage = () => {
                                     initial={{ opacity: 0, y: 40 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 1.2, ease: "easeInOut", delay: index * 0.15 }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: false }}
                                     whileHover={{ y: -6 }}
-                                    className="bg-white/70 backdrop-blur-xl border border-indigo-100 p-8 rounded-3xl shadow-md hover:shadow-xl transition"
+                                    className="bg-white/70 backdrop-blur-xl border border-indigo-100 p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-500"
                                 >
                                     <div className="w-12 h-12 flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-xl text-xl mb-4">
                                         {item.icon}
@@ -219,14 +232,14 @@ const AboutPage = () => {
 
 
             {/* 🔥 Our Process - Glass Icons */}
-            <section className="py-24 bg-[#F5F5F7] relative">
+            <section className="py-24 relative">
                 <div className="max-w-6xl mx-auto px-6 text-center">
 
                     <motion.h2
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.2, ease: "easeInOut" }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         className="text-4xl font-bold mb-16"
                     >
                         Our Process
@@ -245,9 +258,9 @@ const AboutPage = () => {
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1.2, ease: "easeInOut", delay: index * 0.2 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false }}
                                 whileHover={{ y: -6 }}
-                                className="bg-white/80 backdrop-blur-lg border border-indigo-100 p-8 rounded-3xl shadow-md hover:shadow-xl transition"
+                                className="bg-white/80 backdrop-blur-lg border border-indigo-100 p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-500"
                             >
                                 <div className="w-12 h-12 flex items-center justify-center bg-indigo-600 text-white rounded-xl text-xl mb-5 mx-auto">
                                     {item.icon}
@@ -268,6 +281,72 @@ const AboutPage = () => {
             </section>
 
 
+            {/* ================= INDUSTRIES ================= */}
+            <section className="py-24 bg-indigo-50 text-gray-800">
+
+                <motion.h2
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                    viewport={{ once: false }}
+                    className="text-3xl font-bold text-center mb-16 text-indigo-900"
+                >
+                    Industries We Served
+                </motion.h2>
+
+                <div className="max-w-7xl mx-auto px-6">
+
+                    <div className="grid grid-cols-2 md:grid-cols-5">
+                        {[
+                            { icon: <FaHotel />, title: "Hotels" },
+                            { icon: <FaUtensils />, title: "Food" },
+                            { icon: <FaCar />, title: "Automotive" },
+                            { icon: <FaBuilding />, title: "Real Estate" },
+                            { icon: <FaHospital />, title: "Health Care" },
+                            { icon: <FaHeadset />, title: "Consultants" },
+                            { icon: <FaUniversity />, title: "Financial Services" },
+                            { icon: <FaBus />, title: "Transportation" },
+                            { icon: <FaBook />, title: "Schools & Education" },
+                            { icon: <FaCogs />, title: "Service Contractors" },
+                        ].map((item, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: index * 0.08 }}
+                                viewport={{ once: false }}
+                                className="flex flex-col items-center justify-center py-10 
+border border-indigo-200 
+group hover:bg-indigo-100/40 
+transition-all duration-500"
+
+                            >
+
+                                {/* Icon Box */}
+                                <div className="w-14 h-14 flex items-center justify-center rounded-xl 
+                    bg-indigo-100 text-indigo-600 text-2xl mb-3 
+                    group-hover:bg-indigo-600 group-hover:text-white 
+                    transition-all duration-500">
+                                    {item.icon}
+                                </div>
+
+                                {/* Title */}
+                                <h4 className="text-sm font-semibold text-center 
+                    group-hover:text-indigo-700 transition-all duration-500">
+                                    {item.title}
+                                </h4>
+
+                            </motion.div>
+                        ))}
+
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
             {/* 🔥 Updated CTA (Less Height) */}
             <section className="relative py-20 bg-linear-to-r from-indigo-900 via-indigo-800 to-indigo-900 overflow-hidden">
 
@@ -275,7 +354,7 @@ const AboutPage = () => {
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, ease: "easeInOut" }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     className="relative max-w-3xl mx-auto px-6 text-center"
                 >
 
@@ -291,11 +370,11 @@ const AboutPage = () => {
 
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
 
-                            <button className="bg-white text-indigo-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition hover:-translate-y-1">
+                            <button className="bg-white text-indigo-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-500 hover:-translate-y-1">
                                 Start Your Project
                             </button>
 
-                            <button className="border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-indigo-900 transition hover:-translate-y-1">
+                            <button className="border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-indigo-900 transition-all duration-500 hover:-translate-y-1">
                                 Talk to Our Team
                             </button>
 

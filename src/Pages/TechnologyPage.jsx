@@ -121,7 +121,7 @@ export default TechnologyPage;
 
 const TechSection = ({ title, children }) => {
     return (
-        <section className="py-10 px-6 md:px-16 lg:px-24 bg-gray-50">
+        <section className="py-10 px-6 md:px-16 lg:px-24 bg-indigo-50">
             <h2 className="text-3xl font-bold text-center mb-12">
                 {title}
             </h2>
@@ -143,18 +143,18 @@ const TechCard = ({ icon, name }) => {
             transition={{ type: "spring", stiffness: 200 }}
             className="relative group rounded-2xl overflow-hidden p-[2px]
             bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 
-            hover:scale-105 transition duration-300"
+            hover:scale-105 transition-all duration-300"
         >
             <div className="bg-white rounded-2xl p-6 text-center shadow-md 
-            group-hover:bg-gradient-to-br from-indigo-50 to-purple-50 transition">
+            group-hover:bg-gradient-to-br from-indigo-50 to-purple-50 transition-all duration-300">
 
                 <div className="text-4xl text-indigo-600 mb-3 
-                group-hover:text-purple-700 transition">
+                group-hover:text-purple-700 transition-all duration-300">
                     {icon}
                 </div>
 
                 <h3 className="text-lg font-semibold 
-                group-hover:text-indigo-700">
+                group-hover:text-indigo-700 transition-all duration-300">
                     {name}
                 </h3>
 
