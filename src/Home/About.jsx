@@ -42,7 +42,7 @@ const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
-            className="py-28"
+            className="py-28 bg-indigo-50"
         >
             <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
