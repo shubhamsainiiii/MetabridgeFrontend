@@ -4,20 +4,19 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import heroBg from '../assets/image/heroBanner.jpg';
 
 const Hero = () => {
   return (
     <section
-      className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center text-white"
+      className="relative bg-cover bg-center bg-no-repeat text-white py-50 md:py-0 md:min-h-132 flex md:items-center"
       style={{
         backgroundImage:
-          `url(${heroBg})`,
-        // "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085')",
+          "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085')",
+        // backgroundPosition: "center 30%",
       }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60" ></div>
+      <div className="absolute inset-0 bg-black/60"></div>
 
       <div className="relative max-w-7xl mx-auto px-6 text-center">
 
@@ -52,7 +51,7 @@ const Hero = () => {
         </div>
 
       </div>
-    </section >
+    </section>
   )
 }
 
