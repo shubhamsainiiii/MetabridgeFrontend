@@ -9,7 +9,7 @@ import heroBg from '../assets/image/heroBanner.jpg';
 const Hero = () => {
   return (
     <section
-      className="relative bg-cover bg-center bg-no-repeat text-white mb-10 md:py-0 md:min-h-screen flex md:items-center"
+      className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center text-white"
       style={{
         backgroundImage:
           `url(${heroBg})`,
