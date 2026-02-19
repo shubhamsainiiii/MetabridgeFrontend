@@ -5,6 +5,7 @@ import Home from './Pages/Home';
 import AboutPage from './Pages/AboutPage';
 import Footer from './Components/Layout/Footer';
 import ScrollToTop from './Components/ScrollToTop';
+import ServicesPage from './Pages/ServicesPage';
 
 
 
@@ -17,6 +18,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<ServicesPage />} />
       </Routes>
 
       <Footer />

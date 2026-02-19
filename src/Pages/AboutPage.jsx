@@ -1,247 +1,3 @@
-// /* eslint-disable no-unused-vars */
-// import React from "react";
-// import { motion } from "framer-motion";
-// import { FaLightbulb, FaUsers, FaLayerGroup } from "react-icons/fa";
-// import { FaClipboardList, FaPencilRuler, FaCode, FaRocket } from "react-icons/fa";
-
-// const AboutPage = () => {
-//     const fadeUp = {
-//         hidden: { opacity: 0, y: 40 },
-//         visible: {
-//             opacity: 1,
-//             y: 0,
-//             transition: { duration: 1.2, ease: "easeInOut" },
-//         },
-//     };
-
-//     const fadeLeft = {
-//         hidden: { opacity: 0, x: -50 },
-//         visible: {
-//             opacity: 1,
-//             x: 0,
-//             transition: { duration: 1.2, ease: "easeInOut" },
-//         },
-//     };
-
-//     const fadeRight = {
-//         hidden: { opacity: 0, x: 50 },
-//         visible: {
-//             opacity: 1,
-//             x: 0,
-//             transition: { duration: 1.2, ease: "easeInOut" },
-//         },
-//     };
-
-//     return (
-//         <div className="bg-white text-gray-800 overflow-hidden">
-
-//             {/* 🔥 Split Hero Section */}
-//             <section className="py-28 bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-900 text-white">
-//                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-
-//                     <motion.div
-//                         variants={fadeLeft}
-//                         initial="hidden"
-//                         whileInView="visible"
-//                         viewport={{ once: true }}
-//                     >
-//                         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-//                             Crafting Digital Excellence
-//                         </h1>
-//                         <p className="text-lg text-indigo-200 mb-8">
-//                             We transform ideas into high-performing digital products with
-//                             innovation, technology, and strategy.
-//                         </p>
-
-//                         {/* Floating Stats */}
-//                         <div className="flex gap-6">
-//                             <div className="bg-white/10 backdrop-blur-lg px-6 py-4 rounded-xl">
-//                                 <h3 className="text-2xl font-bold">50+</h3>
-//                                 <p className="text-indigo-200 text-sm">Projects</p>
-//                             </div>
-//                             <div className="bg-white/10 backdrop-blur-lg px-6 py-4 rounded-xl">
-//                                 <h3 className="text-2xl font-bold">30+</h3>
-//                                 <p className="text-indigo-200 text-sm">Clients</p>
-//                             </div>
-//                         </div>
-//                     </motion.div>
-
-//                     <motion.img
-//                         variants={fadeRight}
-//                         initial="hidden"
-//                         whileInView="visible"
-//                         viewport={{ once: true }}
-//                         src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-//                         alt="Team"
-//                         className="rounded-3xl shadow-2xl"
-//                     />
-//                 </div>
-//             </section>
-
-
-//             {/* 🔥 Who We Are - Glass Icons */}
-//             <section className="py-24 bg-white">
-//                 <div className="max-w-6xl mx-auto px-6">
-
-//                     <motion.h2
-//                         initial={{ opacity: 0, y: 40 }}
-//                         whileInView={{ opacity: 1, y: 0 }}
-//                         transition={{ duration: 1.2, ease: "easeInOut" }}
-//                         viewport={{ once: true }}
-//                         className="text-4xl font-bold text-center mb-16"
-//                     >
-//                         Who We Are
-//                     </motion.h2>
-
-//                     <div className="grid md:grid-cols-3 gap-8">
-
-//                         {[
-//                             {
-//                                 icon: <FaLightbulb />,
-//                                 title: "Innovation First",
-//                                 desc: "We build cutting-edge digital solutions using modern technologies."
-//                             },
-//                             {
-//                                 icon: <FaUsers />,
-//                                 title: "Client Focused",
-//                                 desc: "Every solution is tailored to business goals and user experience."
-//                             },
-//                             {
-//                                 icon: <FaLayerGroup />,
-//                                 title: "Scalable Systems",
-//                                 desc: "Our architecture ensures long-term growth and performance."
-//                             }
-//                         ].map((item, index) => (
-//                             <motion.div
-//                                 key={index}
-//                                 initial={{ opacity: 0, y: 40 }}
-//                                 whileInView={{ opacity: 1, y: 0 }}
-//                                 transition={{ duration: 1.2, ease: "easeInOut", delay: index * 0.2 }}
-//                                 viewport={{ once: true }}
-//                                 whileHover={{ y: -8 }}
-//                                 className="bg-white/60 backdrop-blur-lg border border-gray-200 p-10 rounded-3xl shadow-lg hover:shadow-2xl transition"
-//                             >
-//                                 <div className="text-indigo-600 text-3xl mb-4">
-//                                     {item.icon}
-//                                 </div>
-
-//                                 <h3 className="text-2xl font-bold text-indigo-700 mb-4">
-//                                     {item.title}
-//                                 </h3>
-
-//                                 <p className="text-gray-600">
-//                                     {item.desc}
-//                                 </p>
-//                             </motion.div>
-//                         ))}
-
-//                     </div>
-//                 </div>
-//             </section>
-
-
-
-//             {/* 🔥 Our Process - Glass Icons */}
-//             <section className="py-24 bg-gray-50">
-//                 <div className="max-w-6xl mx-auto px-6 text-center">
-
-//                     <motion.h2
-//                         initial={{ opacity: 0, y: 40 }}
-//                         whileInView={{ opacity: 1, y: 0 }}
-//                         transition={{ duration: 1.2, ease: "easeInOut" }}
-//                         viewport={{ once: true }}
-//                         className="text-4xl font-bold mb-16"
-//                     >
-//                         Our Process
-//                     </motion.h2>
-
-//                     <div className="grid md:grid-cols-4 gap-8">
-
-//                         {[
-//                             { icon: <FaClipboardList />, title: "Planning" },
-//                             { icon: <FaPencilRuler />, title: "Design" },
-//                             { icon: <FaCode />, title: "Development" },
-//                             { icon: <FaRocket />, title: "Deployment" }
-//                         ].map((item, index) => (
-//                             <motion.div
-//                                 key={index}
-//                                 initial={{ opacity: 0, y: 50 }}
-//                                 whileInView={{ opacity: 1, y: 0 }}
-//                                 transition={{ duration: 1.2, ease: "easeInOut", delay: index * 0.2 }}
-//                                 viewport={{ once: true }}
-//                                 whileHover={{ scale: 1.05 }}
-//                                 className="bg-white/70 backdrop-blur-lg border border-gray-200 p-10 rounded-3xl shadow-lg hover:shadow-2xl transition"
-//                             >
-//                                 <div className="text-indigo-600 text-3xl mb-4 flex justify-center">
-//                                     {item.icon}
-//                                 </div>
-
-//                                 <h4 className="text-xl font-semibold text-indigo-700">
-//                                     {item.title}
-//                                 </h4>
-
-//                                 <p className="text-gray-600 mt-3 text-sm">
-//                                     Structured execution ensuring quality and timely delivery.
-//                                 </p>
-//                             </motion.div>
-//                         ))}
-
-//                     </div>
-//                 </div>
-//             </section>
-
-//             {/* 🔥 Updated CTA (Less Height) */}
-//             <section className="relative py-20 bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-900 overflow-hidden">
-
-//                 <motion.div
-//                     initial={{ opacity: 0, y: 40 }}
-//                     whileInView={{ opacity: 1, y: 0 }}
-//                     transition={{ duration: 1.2, ease: "easeInOut" }}
-//                     viewport={{ once: true }}
-//                     className="relative max-w-3xl mx-auto px-6 text-center"
-//                 >
-
-//                     <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-10 rounded-3xl shadow-2xl">
-
-//                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
-//                             Let’s Build Something <span className="text-indigo-300">Extraordinary</span>
-//                         </h2>
-
-//                         <p className="text-indigo-200 mb-8">
-//                             Partner with us to accelerate your digital transformation.
-//                         </p>
-
-//                         <div className="flex flex-col sm:flex-row justify-center gap-4">
-
-//                             <button className="bg-white text-indigo-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition hover:-translate-y-1">
-//                                 Start Your Project
-//                             </button>
-
-//                             <button className="border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-indigo-900 transition hover:-translate-y-1">
-//                                 Talk to Our Team
-//                             </button>
-
-//                         </div>
-
-//                     </div>
-//                 </motion.div>
-//             </section>
-// s
-
-
-//         </div>
-//     );
-// };
-
-// export default AboutPage;
-
-
-
-
-
-
-
-
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { motion } from "framer-motion";
@@ -280,7 +36,7 @@ const AboutPage = () => {
         <div className="text-gray-800 overflow-hidden">
 
             {/* 🔥 Enhanced Split Hero Section */}
-            <section className="py-8 bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-900 text-white">
+            <section className="py-8 bg-linear-to-r from-indigo-900 via-indigo-800 to-indigo-900 text-white">
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
                     <motion.div
@@ -358,7 +114,7 @@ const AboutPage = () => {
 
             {/* 🔥 Who We Are - Expanded Version */}
             <section className="py-28 bg-white relative">
-                <div className="absolute inset-0 bg-gradient-to-b from-white via-indigo-50/40 to-white"></div>
+                <div className="absolute inset-0 bg-linear-to-b from-white via-indigo-50/40 to-white"></div>
 
                 <div className="relative max-w-7xl mx-auto px-6">
 
@@ -513,7 +269,7 @@ const AboutPage = () => {
 
 
             {/* 🔥 Updated CTA (Less Height) */}
-            <section className="relative py-20 mb-10 bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-900 overflow-hidden">
+            <section className="relative py-20 bg-linear-to-r from-indigo-900 via-indigo-800 to-indigo-900 overflow-hidden">
 
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -551,5 +307,4 @@ const AboutPage = () => {
         </div>
     );
 };
-
 export default AboutPage;
