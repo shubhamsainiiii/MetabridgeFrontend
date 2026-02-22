@@ -3,8 +3,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaLightbulb, FaUsers, FaLayerGroup } from "react-icons/fa";
 import { FaClipboardList, FaPencilRuler, FaCode, FaRocket } from "react-icons/fa";
+
+import  { Link } from 'react-router-dom';
 import {
-    FaHotel,
+    FaHotel, FaShieldAlt,
     FaUtensils,
     FaCar,
     FaBuilding,
@@ -49,7 +51,7 @@ const AboutPage = () => {
         <div className="text-gray-800 overflow-hidden bg-indigo-50 ">
 
             {/* 🔥 Enhanced Split Hero Section */}
-            <section className="py-8 bg-linear-to-r from-indigo-900 via-indigo-800 to-indigo-900 text-white">
+            <section className="py-18 bg-linear-to-r from-indigo-900 via-indigo-800 to-indigo-900 text-white">
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
                     <motion.div
@@ -82,16 +84,16 @@ const AboutPage = () => {
 
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                            <button className="bg-white text-indigo-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-500">
+                            <Link to="/contact" className="bg-white text-indigo-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-500 hover:-translate-y-1">
                                 Get Started
-                            </button>
+                            </Link>
 
-                            <button className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-indigo-900 transition-all duration-500">
+                            <Link to="/projects" className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-indigo-900 transition-all duration-500 hover:-translate-y-1">
                                 View Our Work
-                            </button>
+                            </Link>
                         </div>
 
-                        {/* Floating Stats */}
+                        {/* Floating Stats
                         <div className="flex flex-wrap gap-6">
                             <div className="bg-white/10 backdrop-blur-lg px-6 py-4 rounded-xl">
                                 <h3 className="text-2xl font-bold">50+</h3>
@@ -107,7 +109,7 @@ const AboutPage = () => {
                                 <h3 className="text-2xl font-bold">5+</h3>
                                 <p className="text-indigo-200 text-sm">Years Experience</p>
                             </div>
-                        </div>
+                        </div> */}
 
                     </motion.div>
 
@@ -308,6 +310,7 @@ const AboutPage = () => {
                             { icon: <FaBus />, title: "Transportation" },
                             { icon: <FaBook />, title: "Schools & Education" },
                             { icon: <FaCogs />, title: "Service Contractors" },
+                            { icon: <FaShieldAlt />, title: "Law Enforcement Agencies" },
                         ].map((item, index) => (
                             <motion.div
                                 key={index}
@@ -370,13 +373,13 @@ transition-all duration-500"
 
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
 
-                            <button className="bg-white text-indigo-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-500 hover:-translate-y-1">
+                            <Link to="/projects" className="bg-white text-indigo-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-500 hover:-translate-y-1">
                                 Start Your Project
-                            </button>
+                            </Link>
 
-                            <button className="border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-indigo-900 transition-all duration-500 hover:-translate-y-1">
+                            <Link to="/contact" className="border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-indigo-900 transition-all duration-500 hover:-translate-y-1">
                                 Talk to Our Team
-                            </button>
+                            </Link>
 
                         </div>
 

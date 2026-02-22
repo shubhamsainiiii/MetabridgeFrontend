@@ -39,7 +39,7 @@ const Services = () => {
         { icon: <FaCode />, title: "Web Development", desc: "Modern, scalable React & MERN applications." },
         { icon: <FaMobileAlt />, title: "App Development", desc: "High-performance Android & iOS apps." },
         { icon: <FaCloud />, title: "Cloud Solutions", desc: "Secure & scalable cloud infrastructure." },
-        { icon: <FaShieldAlt />, title: "Cyber Security", desc: "Advanced protection & data security." },
+        { icon: <FaShieldAlt />, title: "Cyber Crime Investigation & Digital Forensics", desc: "Advanced protection & data security." },
     ];
 
     return (

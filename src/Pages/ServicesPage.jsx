@@ -169,38 +169,56 @@
 
 
 // // ================= SERVICE CARD =================
-
 // const ServiceCard = ({ icon, title, desc }) => {
 //     return (
-//         <motion.div
-//             whileHover={{ y: -10 }}
-//             transition={{ type: "spring", stiffness: 200 }}
-//             className="relative group rounded-2xl overflow-hidden p-[2px] bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 hover:scale-105 transition duration-300"
-//         >
-//             <div className="bg-white rounded-2xl p-6 text-center h-full shadow-md group-hover:bg-gradient-to-br from-indigo-50 to-purple-50 transition">
+//         <div className="rounded-2xl overflow-hidden shadow-md bg-white">
 
+//             {/* IMAGE (HOVER ONLY HERE) */}
+//             <div className="h-40 overflow-hidden group">
+//                 <motion.img
+//                     whileHover={{ scale: 1.15 }}
+//                     transition={{ duration: 0.4 }}
+//                     src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+//                     alt="service"
+//                     className="w-full h-full object-cover"
+//                 />
+//             </div>
+
+//             {/* CONTENT */}
+//             <div className="p-6 text-center">
+
+//                 {/* ICON */}
 //                 <div className="mb-4 w-14 h-14 mx-auto flex items-center justify-center rounded-full 
 //                 bg-indigo-100 text-indigo-700 
-//                 group-hover:bg-indigo-700 group-hover:text-white 
+//                 hover:bg-indigo-700 hover:text-white 
 //                 transition duration-300 text-2xl">
 //                     {icon}
 //                 </div>
 
-//                 <h3 className="text-xl font-semibold mb-2 
-//                 group-hover:text-indigo-700 transition">
+//                 {/* TITLE */}
+//                 <h3 className="text-xl font-semibold mb-2">
 //                     {title}
 //                 </h3>
 
+//                 {/* DESC */}
 //                 <p className="text-gray-600 text-sm leading-relaxed">
 //                     {desc}
 //                 </p>
 
-//                 <div className="w-0 h-1 bg-indigo-700 mt-4 mx-auto group-hover:w-16 transition-all duration-300"></div>
+//                 {/* READ MORE */}
+//                 <Link
+//                     to="/services-details"
+//                     className="inline-block mt-4 text-indigo-600 text-sm font-semibold 
+//                     hover:text-purple-700 transition"
+//                 >
+//                     Read More →
+//                 </Link>
 
 //             </div>
-//         </motion.div>
+//         </div>
 //     );
 // };
+
 
 
 // // ================= FEATURE =================
@@ -249,7 +267,6 @@
 
 
 
-
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
@@ -267,6 +284,62 @@ import {
 } from "lucide-react";
 
 const ServicePage = () => {
+    const services = [
+        {
+            icon: <Code />,
+            title: "Web Development",
+            desc: "We build fast, responsive and SEO-friendly websites for businesses.",
+            path: "/services/web-development"
+        },
+        {
+            icon: <Palette />,
+            title: "Web Designing",
+            desc: "Creative UI/UX designs to enhance user engagement.",
+            path: "/services/web-designing"
+        },
+        {
+            icon: <Smartphone />,
+            title: "Mobile App Development",
+            desc: "Custom Android & iOS applications for your business.",
+            path: "/services/mobile-app-development"
+        },
+        {
+            icon: <TrendingUp />,
+            title: "Digital Marketing",
+            desc: "SEO, social media and PPC services.",
+            path: "/services/digital-marketing"
+        },
+        {
+            icon: <Globe />,
+            title: "Custom Web Development",
+            desc: "Tailored web applications for business needs.",
+            path: "/services/custom-web-development"
+        },
+        {
+            icon: <Palette />,
+            title: "Custom Web Design",
+            desc: "Modern responsive website designs.",
+            path: "/services/custom-web-design"
+        },
+        {
+            icon: <ShoppingCart />,
+            title: "E-commerce Development",
+            desc: "Secure and scalable online store.",
+            path: "/services/ecommerce-development"
+        },
+        {
+            icon: <Layers />,
+            title: "WordPress Development",
+            desc: "Custom WordPress websites.",
+            path: "/services/wordpress-development"
+        },
+        {
+            icon: <ShieldCheck />,
+            title: "Cyber Security",
+            desc: "Protect your website with modern security.",
+            path: "/services/cyber-security"
+        }
+    ];
     return (
         <>
             {/* ================= HERO ================= */}
@@ -296,61 +369,15 @@ const ServicePage = () => {
                 </h2>
 
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
-
-                    <ServiceCard
-                        icon={<Code />}
-                        title="Web Development"
-                        desc="We build fast, responsive and SEO-friendly websites for businesses."
-                    />
-
-                    <ServiceCard
-                        icon={<Palette />}
-                        title="Web Designing"
-                        desc="Creative UI/UX designs to enhance user engagement."
-                    />
-
-                    <ServiceCard
-                        icon={<Smartphone />}
-                        title="Mobile App Development"
-                        desc="Custom Android & iOS applications for your business."
-                    />
-
-                    <ServiceCard
-                        icon={<TrendingUp />}
-                        title="Digital Marketing"
-                        desc="SEO, social media and PPC services."
-                    />
-
-                    <ServiceCard
-                        icon={<Globe />}
-                        title="Custom Web Development"
-                        desc="Tailored web applications for business needs."
-                    />
-
-                    <ServiceCard
-                        icon={<Palette />}
-                        title="Custom Web Design"
-                        desc="Modern responsive website designs."
-                    />
-
-                    <ServiceCard
-                        icon={<ShoppingCart />}
-                        title="E-commerce Development"
-                        desc="Secure and scalable online store."
-                    />
-
-                    <ServiceCard
-                        icon={<Layers />}
-                        title="WordPress Development"
-                        desc="Custom WordPress websites."
-                    />
-
-                    <ServiceCard
-                        icon={<ShieldCheck />}
-                        title="Cyber Security"
-                        desc="Protect your website with modern security."
-                    />
-
+                    {services.map((item, index) => (
+                        <ServiceCard
+                            key={index}
+                            icon={item.icon}
+                            title={item.title}
+                            desc={item.desc}
+                            path={item.path}
+                        />
+                    ))}
                 </div>
 
             </section>
@@ -421,12 +448,12 @@ export default ServicePage;
 
 
 // ================= SERVICE CARD =================
-const ServiceCard = ({ icon, title, desc }) => {
+const ServiceCard = ({ icon, title, desc, path }) => {
     return (
         <div className="rounded-2xl overflow-hidden shadow-md bg-white">
 
-            {/* IMAGE (HOVER ONLY HERE) */}
-            <div className="h-40 overflow-hidden group">
+            {/* IMAGE HOVER ONLY */}
+            <div className="h-40 overflow-hidden">
                 <motion.img
                     whileHover={{ scale: 1.15 }}
                     transition={{ duration: 0.4 }}
@@ -439,7 +466,6 @@ const ServiceCard = ({ icon, title, desc }) => {
             {/* CONTENT */}
             <div className="p-6 text-center">
 
-                {/* ICON */}
                 <div className="mb-4 w-14 h-14 mx-auto flex items-center justify-center rounded-full 
                 bg-indigo-100 text-indigo-700 
                 hover:bg-indigo-700 hover:text-white 
@@ -447,19 +473,17 @@ const ServiceCard = ({ icon, title, desc }) => {
                     {icon}
                 </div>
 
-                {/* TITLE */}
                 <h3 className="text-xl font-semibold mb-2">
                     {title}
                 </h3>
 
-                {/* DESC */}
                 <p className="text-gray-600 text-sm leading-relaxed">
                     {desc}
                 </p>
 
-                {/* READ MORE */}
+                {/* 🔥 DYNAMIC ROUTE */}
                 <Link
-                    to="/services-details"
+                    to={path}
                     className="inline-block mt-4 text-indigo-600 text-sm font-semibold 
                     hover:text-purple-700 transition"
                 >
@@ -470,7 +494,6 @@ const ServiceCard = ({ icon, title, desc }) => {
         </div>
     );
 };
-    
 
 
 // ================= FEATURE =================

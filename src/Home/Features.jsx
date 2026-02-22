@@ -53,14 +53,14 @@ const Features = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="bg-indigo-900 text-white py-24"
+            className="bg-indigo-50 py-24"
         >
             <div className="max-w-6xl mx-auto px-6 text-center">
 
                 {/* Heading Animation */}
                 <motion.h2
                     variants={fadeUp}
-                    className="text-3xl md:text-4xl font-bold mb-14"
+                    className="text-3xl md:text-4xl text-indigo-900 font-bold mb-14"
                 >
                     Why Choose Us
                 </motion.h2>
@@ -75,7 +75,7 @@ const Features = () => {
                             className="flex items-center gap-4 bg-indigo-800 p-6 rounded-lg"
                         >
                             <FaCheckCircle className="text-green-400 text-2xl" />
-                            <span className="text-lg">{feature}</span>
+                            <span className="text-lg text-white">{feature}</span>
                         </motion.div>
                     ))}
                 </div>

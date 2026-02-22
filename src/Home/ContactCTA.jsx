@@ -11,7 +11,7 @@ const ContactCTA = () => {
             opacity: 1,
             y: 0,
             transition: {
-                duration: 1.2,
+                duration: 1,
                 ease: "easeInOut"
             }
         }
@@ -23,7 +23,7 @@ const ContactCTA = () => {
             opacity: 1,
             y: 0,
             transition: {
-                duration: 1.2,
+                duration: 1,
                 ease: "easeInOut",
                 delay: 0.2
             }
@@ -37,7 +37,7 @@ const ContactCTA = () => {
             y: 0,
             scale: 1,
             transition: {
-                duration: 1.2,
+                duration: 1,
                 ease: "easeInOut",
                 delay: 0.4
             }
@@ -45,40 +45,64 @@ const ContactCTA = () => {
     };
 
     return (
-        <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            className="bg-indigo-700 text-white py-20 text-center"
-        >
-            <div className="max-w-4xl mx-auto px-6">
+        <section className="bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-900 py-10 flex justify-center">
+
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.4 }}
+                className="
+                max-w-4xl w-full mx-6
+                backdrop-blur-xl
+                bg-white/10
+                border border-white/20
+                rounded-3xl
+                px-10 py-10
+                text-center
+                shadow-2xl
+                "
+            >
 
                 <motion.h2
                     variants={fadeUp}
-                    className="text-3xl md:text-4xl font-bold mb-6"
+                    className="text-3xl md:text-4xl font-bold mb-6 text-white"
                 >
                     Ready to Start Your Project?
                 </motion.h2>
 
                 <motion.p
                     variants={fadeUpDelay}
-                    className="mb-8 text-gray-200"
+                    className="mb-10 text-gray-200"
                 >
                     Let’s build something amazing together. Contact us today.
                 </motion.p>
 
-                <motion.div variants={buttonAnim}>
+                <motion.div
+                    variants={buttonAnim}
+                    className="flex flex-col sm:flex-row gap-4 justify-center"
+                >
                     <Link
                         to="/contact"
-                        className="bg-white text-indigo-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
-                    >
+                        className="
+                        bg-white text-indigo-700 px-8 py-3 rounded-xl font-semibold
+                        hover:bg-gray-200 transition-all duration-300 hover:-translate-y-1">
                         Contact Us
                     </Link>
+
+                    <Link
+                        to="/contact"
+                        className="
+                        border border-white text-white px-8 py-3 rounded-xl font-semibold
+                        hover:bg-white hover:text-indigo-700 transition-all duration-300 hover:-translate-y-1">
+                        Talk to Our Team
+                    </Link>
+
                 </motion.div>
 
-            </div>
-        </motion.section>
+            </motion.div>
+
+        </section>
     )
 }
 
-export default ContactCTA
+export default ContactCTA;

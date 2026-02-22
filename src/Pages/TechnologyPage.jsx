@@ -59,56 +59,56 @@ const TechnologyPage = () => {
 
             {/* ================= WEB ================= */}
             <TechSection title="Web Technologies">
-                <TechCard icon={<FaHtml5 />} name="HTML5" />
-                <TechCard icon={<FaCss3Alt />} name="CSS3" />
-                <TechCard icon={<FaJs />} name="JavaScript" />
-                <TechCard icon={<FaReact />} name="React.js" />
+                <TechCard icon={<FaHtml5 className="text-orange-500" />} name="HTML5" />
+                <TechCard icon={<FaCss3Alt className="text-blue-500" />} name="CSS3" />
+                <TechCard icon={<FaJs className="text-yellow-400" />} name="JavaScript" />
+                <TechCard icon={<FaReact className="text-cyan-400" />} name="React.js" />
                 <TechCard icon={<SiNextdotjs />} name="Next.js" />
-                <TechCard icon={<FaVuejs />} name="Vue.js" />
-                <TechCard icon={<FaAngular />} name="Angular" />
-                <TechCard icon={<FaWordpress />} name="WordPress" />
-                <TechCard icon={<SiTailwindcss />} name="Tailwind CSS" />
-                <TechCard icon={<SiRedux />} name="Redux" />
+                <TechCard icon={<FaVuejs className="text-green-500" />} name="Vue.js" />
+                <TechCard icon={<FaAngular className="text-red-500" />} name="Angular" />
+                <TechCard icon={<FaWordpress className="text-blue-700" />} name="WordPress" />
+                <TechCard icon={<SiTailwindcss className="text-sky-400" />} name="Tailwind CSS" />
+                <TechCard icon={<SiRedux className="text-purple-500" />} name="Redux" />
             </TechSection>
 
             {/* ================= MOBILE ================= */}
             <TechSection title="Mobile App Technologies">
-                <TechCard icon={<FaAndroid />} name="Android" />
-                <TechCard icon={<FaApple />} name="iOS" />
-                <TechCard icon={<SiFlutter />} name="Flutter" />
-                <TechCard icon={<SiKotlin />} name="Kotlin" />
-                <TechCard icon={<SiReact />} name="React Native" />
-                <TechCard icon={<SiFirebase />} name="Firebase" />
+                <TechCard icon={<FaAndroid className="text-green-600" />} name="Android" />
+                <TechCard icon={<FaApple className="text-black" />} name="iOS" />
+                <TechCard icon={<SiFlutter className="text-sky-500" />} name="Flutter" />
+                <TechCard icon={<SiKotlin className="text-purple-600" />} name="Kotlin" />
+                <TechCard icon={<SiReact className="text-cyan-400" />} name="React Native" />
+                <TechCard icon={<SiFirebase className="text-yellow-500" />} name="Firebase" />
             </TechSection>
 
             {/* ================= DEVOPS ================= */}
             <TechSection title="DevOps & Cloud">
-                <TechCard icon={<FaDocker />} name="Docker" />
-                <TechCard icon={<FaAws />} name="AWS" />
-                <TechCard icon={<SiKubernetes />} name="Kubernetes" />
-                <TechCard icon={<SiGrafana />} name="Grafana" />
+                <TechCard icon={<FaDocker className="text-blue-500" />} name="Docker" />
+                <TechCard icon={<FaAws className="text-orange-500" />} name="AWS" />
+                <TechCard icon={<SiKubernetes className="text-blue-600" />} name="Kubernetes" />
+                <TechCard icon={<SiGrafana className="text-orange-600" />} name="Grafana" />
             </TechSection>
 
             {/* ================= PAYMENT ================= */}
             <TechSection title="Payment Integration">
-                <TechCard icon={<SiStripe />} name="Stripe" />
-                <TechCard icon={<FaPaypal />} name="PayPal" />
+                <TechCard icon={<SiStripe className="text-indigo-500" />} name="Stripe" />
+                <TechCard icon={<FaPaypal className="text-blue-700" />} name="PayPal" />
             </TechSection>
 
             {/* ================= BACKEND ================= */}
             <TechSection title="Backend Technologies">
-                <TechCard icon={<FaNodeJs />} name="Node.js" />
+                <TechCard icon={<FaNodeJs className="text-green-600" />} name="Node.js" />
                 <TechCard icon={<SiExpress />} name="Express.js" />
-                <TechCard icon={<FaPython />} name="Python" />
-                <TechCard icon={<FaPhp />} name="PHP" />
-                <TechCard icon={<SiLaravel />} name="Laravel" />
+                <TechCard icon={<FaPython className="text-yellow-500" />} name="Python" />
+                <TechCard icon={<FaPhp className="text-indigo-600" />} name="PHP" />
+                <TechCard icon={<SiLaravel className="text-red-600" />} name="Laravel" />
             </TechSection>
 
             {/* ================= DATABASE ================= */}
             <TechSection title="Database Technologies">
-                <TechCard icon={<SiMongodb />} name="MongoDB" />
-                <TechCard icon={<SiMysql />} name="MySQL" />
-                <TechCard icon={<SiPostgresql />} name="PostgreSQL" />
+                <TechCard icon={<SiMongodb className="text-green-500" />} name="MongoDB" />
+                <TechCard icon={<SiMysql className="text-blue-600" />} name="MySQL" />
+                <TechCard icon={<SiPostgresql className="text-blue-800" />} name="PostgreSQL" />
             </TechSection>
         </>
     );
@@ -121,14 +121,17 @@ export default TechnologyPage;
 
 const TechSection = ({ title, children }) => {
     return (
-        <section className="py-10 px-6 md:px-16 lg:px-24 bg-indigo-50">
+        <section className="py-14 px-6 md:px-16 lg:px-24 bg-indigo-50">
+
             <h2 className="text-3xl font-bold text-center mb-12">
                 {title}
             </h2>
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="
+                grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
                 {children}
             </div>
+
         </section>
     );
 };
@@ -139,29 +142,35 @@ const TechSection = ({ title, children }) => {
 const TechCard = ({ icon, name }) => {
     return (
         <motion.div
-            whileHover={{ y: -10 }}
-            transition={{ type: "spring", stiffness: 200 }}
-            className="relative group rounded-2xl overflow-hidden p-[2px]
-            bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 
-            hover:scale-105 transition-all duration-300"
+            whileHover={{ scale: 1.001 }}
+            transition={{ duration: 0.3 }}
+            className="
+            flex flex-col items-center justify-center
+            py-12 px-4
+            border border-indigo-200 bg-indigo-50
+            hover:bg-indigo-100/50   
+            transition-all duration-300
+            group"
         >
-            <div className="bg-white rounded-2xl p-6 text-center shadow-md 
-            group-hover:bg-gradient-to-br from-indigo-50 to-purple-50 transition-all duration-300">
 
-                <div className="text-4xl text-indigo-600 mb-3 
-                group-hover:text-purple-700 transition-all duration-300">
+            <div className="
+            w-16 h-16 rounded-2xl
+            bg-indigo-100 hover:bg-indigo-200
+            flex items-center justify-center
+            mb-4
+            group-hover:scale-110
+            transition-all duration-500">
+
+                <div className="text-3xl">
                     {icon}
                 </div>
 
-                <h3 className="text-lg font-semibold 
-                group-hover:text-indigo-700 transition-all duration-300">
-                    {name}
-                </h3>
-
-                <div className="w-0 h-1 bg-indigo-700 mt-3 mx-auto 
-                group-hover:w-16 transition-all duration-300"></div>
-
             </div>
+
+            <h3 className="text-sm md:text-base font-medium text-gray-700 text-center">
+                {name}
+            </h3>
+
         </motion.div>
     );
 };
